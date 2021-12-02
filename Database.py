@@ -14,7 +14,7 @@ def Insert():
 
     sqlInsert = "INSERT INTO TVshow (name, date, description) VALUES (" + name + ", " + date + ", "+ description + ")"
     cursor.execute(sqlInsert)
-    #print("INSERT INTO TVshow (name, date, description) VALUES (" + name + ", " + date + ", "+ description + ")")
+    #print(sqlInsert)
 
     conn.commit()
     print(mycursor.rowcount, "record inserted.")
