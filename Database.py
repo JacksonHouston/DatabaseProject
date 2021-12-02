@@ -7,9 +7,9 @@ data = cursor.fetchone()
 print("Connection established to: ",data)
 
 def Insert():
-    print("To insert into the table, please provide the name, date, and description of the show.")
+    print("To insert into the table, please provide the name, year released (YYYY-MM-DD), and description of the show.")
     name = input("Enter name:")
-    date = input("Enter date:") #check which format is used in DB
+    date = input("Enter year released (YYYY-MM-DD):") #check which format is used in DB
     description = input("Enter description:")
 
     sqlInsert = "INSERT INTO TVshow (name, date, description) VALUES (" + name + ", " + date + ", "+ description + ")"
