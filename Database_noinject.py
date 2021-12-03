@@ -31,7 +31,7 @@ def Select():
     selection = raw_input("Enter attribute seperated by a comma ',' :")
     
     #sqlSelect = "Select " + selection + " from TVshow"
-    cursor.execute(sqlSelect)
+    cursor.execute("Select %(selection)s from TVshow", {'selection': selection})
     #print(sqlSelect)
 
     myresult = cursor.fetchall() #print the results
