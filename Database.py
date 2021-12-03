@@ -22,7 +22,7 @@ def Insert():
     sqlInsert = "INSERT INTO TVshow (name, date, description) VALUES (%s, %s, %s)"
     val = (name, date, description)
     print(sqlInsert, val)
-    cursor.execute("INSERT INTO TVshow (name, date, description) VALUES (%s, %s, %s)", (name, date, description))
+    cursor.execute("INSERT INTO TVshow (name, date, description) VALUES (" + name+ " ," + date + " ," + description")")
     
 
     conn.commit()
