@@ -43,10 +43,10 @@ def Select():
 def Update():
     print("To update on the table, please provide the attribute you'd like to update as well as the current value and new value.")
     attribute = raw_input("Enter attribute:")
-    curVal = raw_input("Enter current value:")
+    id = raw_input("Enter the row id:")
     newVal = raw_input("Enter new value:")
 
-    sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + curVal+"' WHERE " + attribute + " = '" + newVal +"'"
+    sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + newVal+"' WHERE " + attribute + " = '" + id +"'"
     cursor.execute(sqlUpdate)
     print(sqlUpdate)
 
