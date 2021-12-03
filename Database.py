@@ -46,7 +46,7 @@ def Update():
     curVal = raw_input("Enter current value:")
     newVal = raw_input("Enter new value:")
 
-    sqlUpdate = "UPDATE TVshow SET" + attribute +" = '" + curVal+"' WHERE" + attribute + "= '" + newVal +"'"
+    sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + curVal+"' WHERE " + attribute + " = '" + newVal +"'"
     cursor.execute(sqlUpdate)
     #print(sqlUpdate)
 
