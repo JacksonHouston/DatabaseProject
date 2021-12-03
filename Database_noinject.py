@@ -11,7 +11,7 @@ def Action():
     elif action == "exit":
         conn.close()   
 
-def Insert():
+def Insert(): #is working correctly - no sql injection
     print("To insert into the table, please provide the name, year released (YYYY-MM-DD), and description of the show.")
     name = raw_input("Enter name:")
     date = raw_input("Enter year released (YYYY-MM-DD):")
@@ -26,7 +26,7 @@ def Insert():
     print(cursor.rowcount, "record inserted.")
     Action()
 
-def Select():
+def Select(): #dont know if sql injection prevention is needed here - it errors each time i've tried to inject sql
     print("To select on the table, please provide the attribute you'd like to view or use '*' to view all")
     selection = raw_input("Enter attribute seperated by a comma ',' :")
     
@@ -40,7 +40,7 @@ def Select():
     
     Action()
 
-def Update():
+def Update(): # gotta work on the .execute string parsing - something seems to be different from the insert verison 
     print("To update on the table, please provide the attribute you'd like to update as well as the current value and new value.")
     attribute = raw_input("Enter attribute:")
     id = raw_input("Enter the row id:")
@@ -48,13 +48,13 @@ def Update():
 
     #sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + newVal+"' WHERE id = '" + id +"'"
     cursor.execute("UPDATE TVshow SET %(attribute)s =  %(newVal)s WHERE id = %(id)s", {'attribute': attribute, 'newVal': newVal, 'id':id})
-    print(sqlUpdate)
+    #print(sqlUpdate)
 
     conn.commit()
     print(cursor.rowcount, "record(s) affected.")
     Action()
 
-def Delete():
+def Delete(): # sql injection - todo havent messed with it yet
     print("To delete on the table, please provide the attribute you'd like to delete as well as its current value.")
     attribute = raw_input("Enter attribute:")
     curVal = raw_input("Enter current value:")
