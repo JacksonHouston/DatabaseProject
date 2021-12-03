@@ -30,7 +30,7 @@ def Select():
     print("To select on the table, please provide the attribute you'd like to view or use '*' to view all")
     selection = raw_input("Enter attribute seperated by a comma ',' :")
     
-    sqlSelect = "Select" + selection + "from TVshow"
+    sqlSelect = "Select " + selection + " from TVshow"
     cursor.execute(sqlSelect)
     #print(sqlSelect)
 
