@@ -48,7 +48,7 @@ def Update():
 
     sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + curVal+"' WHERE " + attribute + " = '" + newVal +"'"
     cursor.execute(sqlUpdate)
-    #print(sqlUpdate)
+    print(sqlUpdate)
 
     conn.commit()
     print(cursor.rowcount, "record(s) affected.")
