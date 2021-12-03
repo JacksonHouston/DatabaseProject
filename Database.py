@@ -6,7 +6,7 @@ cursor = conn.cursor()
 data = cursor.fetchone()
 if conn.is_connected():
     print("Connection established")
-else 
+else: 
     print("Connection failed")
 
 def Insert():
