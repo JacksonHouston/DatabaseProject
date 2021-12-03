@@ -59,13 +59,14 @@ def Delete():
     attribute = raw_input("Enter attribute:")
     curVal = raw_input("Enter current value:")
 
-    sqlDelete = "DELETE FROM TVshow WHERE" + attribute +" = '" + curVal+"'"
+    sqlDelete = "DELETE FROM TVshow WHERE " + attribute +" = '" + curVal+"'"
     cursor.execute(sqlDelete)
     #print(sqlDelete)
 
     conn.commit()
     print(cursor.rowcount, "record(s) deleted.")
     Action()        
+
 import mysql.connector
 
 conn = mysql.connector.connect(user='my.besmera2', password='CSCI355', host='deltona.birdnest.org', database='my_besmera2_group8')
