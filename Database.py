@@ -26,7 +26,7 @@ def Insert():
     
 
     conn.commit()
-    print(mycursor.rowcount, "record inserted.")
+    print(cursor.rowcount, "record inserted.")
 
 def Select():
     print("To select on the table, please provide the attribute you'd like to view or use '*' to view all")
@@ -36,7 +36,7 @@ def Select():
     cursor.execute(sqlSelect)
     #print(sqlSelect)
 
-    myresult = mycursor.fetchall() #print the results
+    myresult = cursor.fetchall() #print the results
     for x in myresult:
         print(x)
 
@@ -63,7 +63,7 @@ def Delete():
     #print(sqlDelete)
 
     conn.commit()
-    print(mycursor.rowcount, "record(s) deleted.")
+    print(cursor.rowcount, "record(s) deleted.")
 
 action = raw_input("What would you like to do? (insert, select, update, delete)")
 if action == "insert":
