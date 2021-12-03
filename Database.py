@@ -16,15 +16,14 @@ for x in cursor:
 def Insert():
     print("To insert into the table, please provide the name, year released (YYYY-MM-DD), and description of the show.")
     name = raw_input("Enter name:")
-    date = raw_input("Enter year released (YYYY-MM-DD):") #check which format is used in DB
+    date = raw_input("Enter year released (YYYY-MM-DD):")
     description = raw_input("Enter description:")
 
-    sqlInsert = "INSERT INTO TVshow (name, date, description) VALUES (%s, %s, %s)"
-    val = (name, date, description)
-    print(sqlInsert, val)
-    cursor.execute("INSERT INTO TVshow (name, yearReleased, description) VALUES ('test' , '2000-01-01', 'test')")
+    #sqlInsert = "INSERT INTO TVshow (name, date, description) VALUES (%s, %s, %s)"
+    #val = (name, date, description)
+    #print(sqlInsert, val)
+    cursor.execute("INSERT INTO TVshow (name, yearReleased, description) VALUES ('" + name + "' , '" + date +" ', '" + description + "')")
     
-
     conn.commit()
     print(cursor.rowcount, "record inserted.")
 
