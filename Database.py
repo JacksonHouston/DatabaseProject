@@ -1,5 +1,5 @@
 def Action():
-    action = raw_input("What would you like to do? (insert, select, update, delete)")
+    action = raw_input("What would you like to do? (insert, select, update, delete, or exit)")
     if action == "insert":
         Insert()
     elif action == "select":
