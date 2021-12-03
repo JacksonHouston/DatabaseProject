@@ -47,7 +47,7 @@ def Update():
     newVal = raw_input("Enter new value:")
 
     #sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + newVal+"' WHERE id = '" + id +"'"
-    cursor.execute(sqlUpdate)
+    cursor.execute("UPDATE TVshow SET %(attribute)s =  %(newVal)s WHERE id = %(id)s", {'attribute': attribute, 'newVal': newVal, 'id':id})
     print(sqlUpdate)
 
     conn.commit()
