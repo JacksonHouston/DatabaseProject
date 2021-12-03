@@ -20,7 +20,7 @@ def Insert():
     #sqlInsert = "INSERT INTO TVshow (name, date, description) VALUES (%s, %s, %s)"
     #val = (name, date, description)
     #print(sqlInsert, val)
-    cursor.execute("INSERT INTO TVshow (name, yearReleased, description) VALUES ('%(name)s' , '%(date)s', '%(description)s')", {'name':name, 'date':date, 'description': description})
+    cursor.execute("INSERT INTO TVshow (name, yearReleased, description) VALUES (%(name)s , %(date)s, %(description)s)", {'name':name, 'date':date, 'description': description})
     
     conn.commit()
     print(cursor.rowcount, "record inserted.")
