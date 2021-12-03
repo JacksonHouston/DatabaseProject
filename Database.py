@@ -19,8 +19,9 @@ def Insert():
     date = raw_input("Enter year released (YYYY-MM-DD):") #check which format is used in DB
     description = raw_input("Enter description:")
 
-    sqlInsert = "INSERT INTO TVshow (name, date, description) VALUES (" + name + ", " + date + ", "+ description + ")"
-    cursor.execute(sqlInsert)
+    sqlInsert = "INSERT INTO TVshow (name, date, description) VALUES (%s, %s, %s)"
+    val = (name, date, description)
+    cursor.execute(sqlInsert, val)
     #print(sqlInsert)
 
     conn.commit()
