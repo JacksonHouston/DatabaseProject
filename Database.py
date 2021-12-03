@@ -4,7 +4,10 @@ conn = mysql.connector.connect(user='my.besmera2', password='CSCI355', host='del
 cursor = conn.cursor()
 #Fetch a single row using fetchone() method.
 data = cursor.fetchone()
-print("Connection established to: ",data)
+if conn.is_connected():
+    print("Connection established")
+else 
+    print("Connection failed")
 
 def Insert():
     print("To insert into the table, please provide the name, year released (YYYY-MM-DD), and description of the show.")
