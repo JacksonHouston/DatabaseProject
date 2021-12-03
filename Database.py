@@ -9,6 +9,8 @@ if conn.is_connected():
 else: 
     print("Connection failed")
 
+cursor.execute("SHOW TABLES")
+
 def Insert():
     print("To insert into the table, please provide the name, year released (YYYY-MM-DD), and description of the show.")
     name = raw_input("Enter name:")
@@ -45,7 +47,7 @@ def Update():
     #print(sqlUpdate)
 
     conn.commit()
-    print(mycursor.rowcount, "record(s) affected.")
+    print(cursor.rowcount, "record(s) affected.")
 
 def Delete():
     print("To delete on the table, please provide the attribute you'd like to delete as well as its current value.")
