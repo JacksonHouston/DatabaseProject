@@ -9,7 +9,9 @@ if conn.is_connected():
 else: 
     print("Connection failed")
 
-cursor.execute("SHOW TABLES;")
+cursor.execute("SHOW TABLES")
+for x in cursor:
+    print(x)
 
 def Insert():
     print("To insert into the table, please provide the name, year released (YYYY-MM-DD), and description of the show.")
