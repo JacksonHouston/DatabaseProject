@@ -46,7 +46,7 @@ def Update():
     id = raw_input("Enter the row id:")
     newVal = raw_input("Enter new value:")
 
-    sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + newVal+"' WHERE " + attribute + " = '" + id +"'"
+    sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + newVal+"' WHERE id = '" + id +"'"
     cursor.execute(sqlUpdate)
     print(sqlUpdate)
 
