@@ -1,3 +1,7 @@
+# Author: Jackson Houston
+# Date: 12/06/21
+# Project: CRUD for editing school database
+
 def Action():
     action = raw_input("What would you like to do? (insert, select, update, delete, or exit)")
     if action == "insert":
