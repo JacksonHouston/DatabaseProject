@@ -47,7 +47,7 @@ def Update(): # gotta work on the .execute string parsing - something seems to b
     newVal = raw_input("Enter new value:")
 
     #sqlUpdate = "UPDATE TVshow SET " + attribute +" = '" + newVal+"' WHERE id = '" + id +"'"
-    cursor.execute("UPDATE TVshow SET %(attribute)s =  %(newVal)s WHERE id = %(id)s", {'attribute': attribute, 'newVal': newVal, 'id':id})
+    cursor.execute("UPDATE TVshow SET " + attribute + " =  %(newVal)s WHERE id = %(id)s", {'newVal': newVal, 'id':id})
     #print(sqlUpdate)
 
     conn.commit()
@@ -59,8 +59,8 @@ def Delete(): # sql injection - todo havent messed with it yet
     attribute = raw_input("Enter attribute:")
     curVal = raw_input("Enter current value:")
 
-    sqlDelete = "DELETE FROM TVshow WHERE " + attribute +" = '" + curVal+"'"
-    cursor.execute(sqlDelete)
+    #sqlDelete = "DELETE FROM TVshow WHERE " + attribute +" = '" + curVal+"'"
+    cursor.execute("DELETE FROM TVshow WHERE " + attribute +" = %(curVal)s", {'curVal' : curVal})
     #print(sqlDelete)
 
     conn.commit()
